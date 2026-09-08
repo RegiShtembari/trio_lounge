@@ -120,7 +120,7 @@ h1 {
 }
 
 .btn-review {
-  background: linear-gradient(180deg, #f1c979, #d9a24b);
+  background: linear-gradient(180deg, #d9a24b, #d9a24b);
   color: #241a12;
   font-weight: 600;
   font-size: 15px;
