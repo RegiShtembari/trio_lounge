@@ -15,10 +15,11 @@ body {
 
 .page {
   width: 100%;
-  /*max-width: 1200px;*/
+  /* max-width: 1200px; */
   min-height: 100vh;
   background: #0c0c0c;
 }
+
 
 /* ---------- Hero ---------- */
 
@@ -42,8 +43,19 @@ body {
 .vignette {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.05) 35%, rgba(0, 0, 0, 0.6) 75%, rgba(12, 12, 12, 1) 100%),
-  radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.45) 100%);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.05) 35%,
+      rgba(0, 0, 0, 0.6) 75%,
+      rgba(12, 12, 12, 1) 100%
+    ),
+    radial-gradient(
+      ellipse at center,
+      transparent 55%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
 }
 
 .content {
@@ -92,6 +104,7 @@ h1 {
   color: #d8cfc0;
 }
 
+
 /* ---------- Links section ---------- */
 
 .links {
@@ -126,6 +139,7 @@ h1 {
   font-size: 15px;
   margin-bottom: 14px;
   box-shadow: 0 6px 18px rgba(217, 162, 75, 0.25);
+  width: 100%;
 }
 
 .btn-review:hover {
@@ -140,8 +154,8 @@ h1 {
 }
 
 .btn-secondary {
-  background: #1a1a1a;
-  color: #f4ede2;
+  background: #FAF8F2 !important;
+  color: black !important;
   border: 1px solid #2a2a2a;
 }
 
@@ -224,20 +238,122 @@ h1 {
   color: #6b6b6b;
 }
 
-.trio_menu {
-  background: black !important;
-  color: white !important;
-  border-color: gray !important;
-}
-
 .footer span {
   margin: 0 6px;
 }
 
+
+/* ---------- Cocktail Menu ---------- */
+
+.trio_menu {
+  background: black !important;
+  color: white !important;
+  border-color: gray !important;
+
+  padding: 25px 22px !important;
+
+  /* Fixed size */
+  height: 400px !important;
+
+  /* Allow scrolling inside the menu */
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+
+  /* Smooth scrolling on mobile */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  /* Prevent the page from scrolling when
+     the user reaches the end of the menu */
+  overscroll-behavior: contain;
+}
+
+
+/* Scrollbar */
+
+.trio_menu::-webkit-scrollbar {
+  width: 4px;
+}
+
+.trio_menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.trio_menu::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+
+
+/* Menu title */
+
+.menu-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.menu-title span {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+
+/* Menu item */
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid #333;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+
+/* Drink name */
+
+.menu-item h4 {
+  margin: 0 0 5px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+/* Description */
+
+.menu-item p {
+  margin: 0;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  color: #aaa;
+}
+
+
+/* Price */
+
+.menu-item .price {
+  flex-shrink: 0;
+  font-family: 'Jost', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
 /* ---------- Responsive ---------- */
 
+
 /* Mobile */
+
 @media (max-width: 576px) {
+
   .links {
     padding: 16px;
   }
@@ -258,24 +374,66 @@ h1 {
   h1 {
     font-size: 32px;
   }
+
+
+  /* Cocktail menu */
+
+  .trio_menu {
+    height: 350px !important;
+    padding: 22px 18px !important;
+  }
+
+  .menu-title {
+    margin-bottom: 18px;
+  }
+
+  .menu-title span {
+    font-size: 22px;
+  }
+
+  .menu-item {
+    padding: 14px 0;
+  }
+
+  .menu-item h4 {
+    font-size: 17px;
+  }
+
+  .menu-item p {
+    font-size: 11px;
+  }
+
+  .menu-item .price {
+    font-size: 15px;
+  }
 }
 
+
 /* Tablet */
+
 @media (min-width: 577px) and (max-width: 991px) {
-  /*.page {*/
-  /*  max-width: 700px;*/
-  /*}*/
+
+  /* .page {
+      max-width: 700px;
+  } */
 
   .btn-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .trio_menu {
+    height: 400px !important;
+  }
 }
 
+
 /* Desktop */
+
 @media (min-width: 992px) {
-  /*.page {*/
-  /*  max-width: 1000px;*/
-  /*}*/
+
+  /* .page {
+      max-width: 1000px;
+  } */
 
   .links {
     padding: 32px;
@@ -297,7 +455,13 @@ h1 {
   .review-card {
     padding: 20px;
   }
+
+  .trio_menu {
+    height: 450px !important;
+  }
 }
+
+
 /* ---------- Carousel ---------- */
 
 #carouselExampleIndicators {
@@ -305,12 +469,12 @@ h1 {
 }
 
 #carouselExampleIndicators .carousel-item {
-  height: 55%; /* change this if you want */
+  height: 55%;
 }
 
 #carouselExampleIndicators .carousel-item img {
   width: 100%;
-  height: 100%;
+  height: 50vh;
   object-fit: cover;
   object-position: center;
 }
